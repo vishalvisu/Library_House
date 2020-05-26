@@ -42,12 +42,12 @@ input{
   align-text:center;
 }
 .card-title{
-     color:black;
+     color:blue;
 }
 h1,h2{
 
 margin:auto;
- color:black;
+ color:blue;
 }
 a{
   margin-left: 45px;

@@ -34,7 +34,7 @@ margin-left:225px;
   border-radius: 4px;
    text-align:center;
    background-color:white;
-   color:black;
+   color:blue;
    margin:15px;
     justify-content: center;
   align-items: center;
@@ -44,6 +44,9 @@ margin-left:225px;
 h1{
    text-align:center;
    color:white;
+}
+.header{
+background-color:blue;
 }
 </style>  
   </head>
@@ -57,8 +60,8 @@ h1{
     
 	
     <div>
-     <h1>Welcome in Add--Book-- Section!</h1>
-     <h1>This Section Is Only For Librarian </h1>   
+     <h1 class="header">Welcome in Add--Book-- Section!</h1>
+     <h1 class="header">This Section Is Only For Librarian </h1>   
    <div class="container">
   <form action="add_book" method="POST">
     

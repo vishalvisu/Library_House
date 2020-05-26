@@ -41,8 +41,32 @@ public class librarian_controller {
 	         SessionFactory factory= cfg.buildSessionFactory();
 	         
 	         Session session=factory.openSession();
-	         org.hibernate.Transaction tx=  session.beginTransaction();
 	         
+	         @SuppressWarnings("unchecked")
+	     	Query<POJO_CLASSES.avl_members> query = session.createQuery("from avl_members where id=:c");
+	     	         query.setParameter("c",mDetails.getId());
+	     	         
+	     	         List<POJO_CLASSES.avl_members> list= query.list();
+	     	         
+	     	         for(POJO_CLASSES.avl_members iAvl_books:list)
+	     	         {
+	     	        	 if(iAvl_books.getId().equals(mDetails.getId()))
+	     	        	 {
+	     	        		    String response="ID Already Assigned To Another User";
+	     	        			String link="add_book.jsp";
+	     	        		 
+	     	        			m.addAttribute("response",response);
+	     	        			m.addAttribute("result",0);
+	     	        			m.addAttribute("back",link);
+	     	      
+	     	        			session.close();
+	     	        		    
+	     	        			return "response";
+	     	        	 }
+	     	         }
+	         
+	         
+	     	        org.hibernate.Transaction tx=  session.beginTransaction();
 	      POJO_CLASSES.avl_members members = new POJO_CLASSES.avl_members(id,name,dept,stream,start_year+"-"+end_year);
 	                 session.save(members);
 	        
@@ -76,8 +100,32 @@ public class librarian_controller {
 	         SessionFactory factory= cfg.buildSessionFactory();
 	         
 	         Session session=factory.openSession();
-	         org.hibernate.Transaction tx=  session.beginTransaction();
+	        // org.hibernate.Transaction tx=  session.beginTransaction();
 
+	  @SuppressWarnings("unchecked")
+	Query<POJO_CLASSES.avl_books> query = session.createQuery("from avl_books where id=:c");
+	         query.setParameter("c",bDetails.getId());
+	         
+	         List<POJO_CLASSES.avl_books> list= query.list();
+	         
+	         for(POJO_CLASSES.avl_books iAvl_books:list)
+	         {
+	        	 if(iAvl_books.getId().equals(bDetails.getId()))
+	        	 {
+	        		    String response="ID Already Assigned To Another Book";
+	        			String link="add_book.jsp";
+	        		 
+	        			m.addAttribute("response",response);
+	        			m.addAttribute("result",0);
+	        			m.addAttribute("back",link);
+	      
+	        			session.close();
+	        		    
+	        			return "response";
+	        	 }
+	         }
+	         
+	         org.hibernate.Transaction tx=  session.beginTransaction();    
 POJO_CLASSES.avl_books members = new POJO_CLASSES.avl_books(bDetails.getId(),bDetails.getTitle(),bDetails.getAuthors(),bDetails.getISBN_CODE(),bDetails.getSubject(),true);
 	                 session.save(members);
 	        

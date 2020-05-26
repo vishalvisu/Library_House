@@ -25,6 +25,9 @@ h1{
    text-align:center;
    color:white;
 }
+.header{
+background-color:blue;
+}
 
 </style>  
   </head>
@@ -38,8 +41,8 @@ h1{
     
     <div>
         <a href="index.jsp"><button type="button" class="btn btn-secondary btn-lg" style="margin-right:50px">HOME</button></a>
-     <h1>Welcome in Add--MEMBER-- Section!</h1>
-     <h1>This Section Is Only For Librarian </h1>   
+     <h1 class="header">Welcome in Add--MEMBER-- Section!</h1>
+     <h1 class="header">This Section Is Only For Librarian </h1>   
    <div class="container">
   <h2>Enter NEW---MEMBER Details</h2>
   <form  action="add_member" method="post">

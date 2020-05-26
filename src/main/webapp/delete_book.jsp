@@ -31,7 +31,7 @@ body
    text-align:center;
    background-color:white;
    height:200px;
-   color:black;
+   color:blue;
    margin:15px;
     justify-content: center;
   align-items: center;
@@ -42,16 +42,17 @@ input{
   align-text:center;
 }
 .card-title{
-     color:black;
+     color:blue;
 }
 h1,h2{
 
 margin:auto;
- color:black;
+ color:blue;
 }
 
 .header{
 color:white;
+background-color:blue;
 }
 
 </style>  
